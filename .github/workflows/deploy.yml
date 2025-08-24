@@ -40,6 +40,12 @@ jobs:
 
       - name: Build the site
         run: ./dash_site build
+        
+      - name: Upload static files as artifact
+        id: _site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5.0.0
