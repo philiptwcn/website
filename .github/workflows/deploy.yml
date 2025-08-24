@@ -45,6 +45,7 @@ jobs:
         id: _site
         uses: actions/upload-pages-artifact@v3
         with:
+          name: _site
           path: _site
 
       - name: Configure GitHub Pages
