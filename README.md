@@ -336,3 +336,14 @@ you can build a full version and upload it to Firebase.
 4. Navigate to your PR on GitHub and include the link of the staged version.
    Do consider adding a reference to the commit you staged,
    so that reviewers know if any further changes have been made.
+
+## Continuous Deployment
+
+This repository uses a GitHub Actions workflow ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)) to automatically build and deploy the site to GitHub Pages whenever changes are pushed to the `main` branch. The workflow:
+
+- Checks out the repository
+- Sets up Node.js and installs dependencies using `pnpm`
+- Builds the site for production
+- Deploys the generated `_site` directory to the `gh-pages` branch using [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages)
+
+No manual action is required for production deployment—just push to `main` and the workflow will handle publishing.
